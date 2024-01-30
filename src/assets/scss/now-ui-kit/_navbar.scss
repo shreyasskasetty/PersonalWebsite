@@ -198,3 +198,14 @@
 .bg-white{
     background-color: $white-color !important;
 }
+
+$breakpoint-sm: 768px;
+
+#my-nav {
+  // Styling for your nav with the specific ID
+
+  // Media query for small screens
+  @media (max-width: $breakpoint-sm) {
+    display: none; // This will hide the navigation links on small screens
+  }
+}

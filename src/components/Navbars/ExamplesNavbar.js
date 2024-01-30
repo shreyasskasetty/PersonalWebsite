@@ -32,6 +32,12 @@ function ExamplesNavbar() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+  const navBarStyle = {
+    display: 'flex',  // Ensures items are in a row
+    flexWrap: 'nowrap',  // Allows items to wrap to the next line if there is not enough room
+    alignItems: 'center',  // Vertically centers the items
+    justifyContent: 'space-around',  // Evenly spaces out the items
+  };
   return (
     <>
       {collapseOpen ? (
@@ -43,6 +49,7 @@ function ExamplesNavbar() {
           }}
         />
       ) : null}
+      
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <Container>
           {/* <UncontrolledDropdown className="button-dropdown">
@@ -96,22 +103,22 @@ function ExamplesNavbar() {
               <span className="navbar-toggler-bar bottom-bar"></span>
             </button>
           </div>
-          <Nav navbar>
-                <NavItem>
-                      <NavLink href="#home">
-                        Home
-                      </NavLink>
-                  </NavItem>
-                  <NavItem>
-                      <NavLink href="#about">
-                        About
-                      </NavLink>
-                  </NavItem>
-                  <NavItem>
-                      <NavLink href="#mymedia">
-                        media
-                      </NavLink>
-                  </NavItem>
+          <Nav id="#my-nav" style={navBarStyle}>
+            <NavItem>
+                  <NavLink href="#home">
+                    Home
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink href="#about">
+                    About
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink href="#mymedia">
+                    Media
+                  </NavLink>
+              </NavItem>
             </Nav>
           <Collapse
             className="justify-content-end"

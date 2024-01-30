@@ -205,7 +205,7 @@ function ProfilePage() {
                       </NavLink>
                     </NavItem>
                     <UncontrolledTooltip delay={0} target="text1234">
-                      Text
+                      Social Media and Communication
                     </UncontrolledTooltip>
                     <NavItem>
                       <NavLink

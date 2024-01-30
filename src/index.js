@@ -29,8 +29,8 @@ root.render(
   <BrowserRouter>
     <Routes>
       {/* <Route path="/index" element={<Index />} /> */}
-      <Route path="/home" element={<ProfilePage />} />
-      <Route path="*" element={<Navigate to="/home" replace />} />
+      <Route path="/PersonalWebsite" element={<ProfilePage />} />
+      <Route path="*" element={<Navigate to="/PersonalWebsite" replace />} />
     </Routes>
   </BrowserRouter>
 );
