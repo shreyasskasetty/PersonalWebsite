@@ -50,6 +50,9 @@ const MusicPane = ({  musics }) => {
     <Box display="flex" sx={{ p: 3, backgroundColor: theme.palette.background.default }}>
       {/* Music List */}
       <Box width="100%">
+        <Box>
+          <h3>My favourite Songs:</h3>
+        </Box>
         <List>
           {musics.map((music, index) => (
             <ListItem button key={index} onClick={() => handleSelectMusic(music)}>

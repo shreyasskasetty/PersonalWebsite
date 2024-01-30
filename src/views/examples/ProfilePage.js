@@ -13,6 +13,11 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
+import {  Paper,
+  Typography,
+  List,
+  ListItem,
+  ListItemText } from '@mui/material';
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
@@ -21,6 +26,40 @@ import ImagePane from "../../components/MediaTabs/ImagePane";
 import VideoPane from "../../components/MediaTabs/VideoPane";
 import MusicPane from "components/MediaTabs/MusicPane";
 import SocialMediaPane from "components/MediaTabs/SocialMediaPane";
+import SportsPane from "components/MediaTabs/SportsPane";
+
+
+function ChallengesSection() {
+  const challenges = [
+    {
+      tool: "Adobe Premiere Pro",
+      description: "Complex video editing software with a steep learning curve for beginners."
+    },
+    {
+      tool: "Adobe After Effects",
+      description: "Advanced visual effects and motion graphics tool, challenging for those new to such software."
+    }
+  ];
+
+  return (
+    <Paper style={{ zIndex: -2, padding: 16, marginTop: 16 }}>
+      <Typography variant="h6" gutterBottom>
+        Challenges Faced with Interactive Media Tools
+      </Typography>
+      <List>
+        {challenges.map((challenge, index) => (
+          <ListItem key={index}>
+            <ListItemText 
+              primary={challenge.tool} 
+              secondary={challenge.description} 
+            />
+          </ListItem>
+        ))}
+      </List>
+    </Paper>
+  );
+}
+
 function ProfilePage() {
   const [pills, setPills] = React.useState("2");
 
@@ -29,12 +68,18 @@ function ProfilePage() {
       { name: "Friends", imageUrl: require("assets/img/friends.jpg") },
       { name: "How I Met Your Mother", imageUrl: require("assets/img/howimetyourmother.jpeg") },
       { name: "Game of Thrones", imageUrl: require("assets/img/got.png") },
+      { name: "Big Bang Theory", imageUrl: require("assets/img/bigbangtheory.jpeg")},
+      { name: "That 70's show", imageUrl: require("assets/img/that70sshow.jpeg")},
+      { name: "Peaky Blinders", imageUrl: require("assets/img/peakyblinders.jpeg") },
       // ... other shows
     ],
     movies: [
       { name: "Doctor Strange", imageUrl: require("assets/img/doctorstrange.jpeg") },
       { name: "Perks of Being a Wall Flower", imageUrl: require("assets/img/perksofbeingwallflower.jpeg") },
       { name: "A Beautiful Mind", imageUrl: require("assets/img/abeautifulmind.jpeg") },
+      { name: "Inception", imageUrl: require("assets/img/inception.jpeg") },
+      { name: "Catch Me If You Can", imageUrl: require("assets/img/catchmeifyoucan.jpeg") },
+      { name: "Persuit of Happyness", imageUrl: require("assets/img/persuitofhappyness.jpeg") },
       // ... other movies
     ],
     // ... other categories if needed
@@ -217,7 +262,7 @@ function ProfilePage() {
                           setPills("3");
                         }}
                       >
-                        <i className="now-ui-icons text_caps-small"></i>
+                        <i className="now-ui-icons users_single-02"></i>
                       </NavLink>
                     </NavItem>
                     <UncontrolledTooltip delay={0} target="sound1234">
@@ -234,6 +279,22 @@ function ProfilePage() {
                         }}
                       >
                         <i className="now-ui-icons media-2_note-03"></i>
+                      </NavLink>
+                    </NavItem>
+                    <UncontrolledTooltip delay={0} target="sports1234">
+                      Sports and Games
+                    </UncontrolledTooltip>
+                    <NavItem>
+                      <NavLink
+                        id ="sports1234"
+                        className={pills === "5" ? "active" : ""}
+                        href="#pablo"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setPills("5");
+                        }}
+                      >
+                        <i className="now-ui-icons sport_user-run"></i>
                       </NavLink>
                     </NavItem>
                   </Nav>
@@ -276,7 +337,19 @@ function ProfilePage() {
                             </Col>
                           </Row>
                     </TabPane>
+                    <TabPane tabId="pills5">
+                        <Row className="justify-content-center">
+                            <Col md="6" >
+                              <SportsPane />
+                            </Col>
+                          </Row>
+                    </TabPane>
                   </TabContent>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="ml-auto mr-auto" md="12">
+                  <ChallengesSection />
                 </Col>
               </Row>
           </Container>
