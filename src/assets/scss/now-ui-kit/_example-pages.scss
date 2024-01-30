@@ -89,8 +89,8 @@
         color: #FFFFFF;
     }
     .photo-container{
-        width: 123px;
-        height: 123px;
+        width: 250px;
+        height: 250px;
         border-radius: 50%;
         overflow: hidden;
         margin: 0 auto;
@@ -148,7 +148,18 @@
         margin-top: 45px;
         padding-bottom: 50px;
     }
+    .tab-pane-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+        
+    }
+    .tab-pane-center .row {
+        width: 100%;
+      }
 }
+
 
 .section-full-page{
 

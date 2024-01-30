@@ -15,23 +15,15 @@ function DefaultFooter() {
             <ul>
               <li>
                 <a
-                  href="https://www.creative-tim.com?ref=nukr-default-footer"
+                  href="/profile-page"
                   target="_blank"
                 >
-                  Creative Tim
+                  About Me
                 </a>
               </li>
               <li>
                 <a
-                  href="http://presentation.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://blog.creative-tim.com?ref=nukr-default-footer"
+                  href="#"
                   target="_blank"
                 >
                   Blog
@@ -40,19 +32,12 @@ function DefaultFooter() {
             </ul>
           </nav>
           <div className="copyright" id="copyright">
-            © {new Date().getFullYear()}, Designed by{" "}
+            © {new Date().getFullYear()}, Coded by{" "}
             <a
-              href="https://www.invisionapp.com?ref=nukr-default-footer"
+              href="https://www.linkedin.com/in/shreyasskasetty/"
               target="_blank"
             >
-              Invision
-            </a>
-            . Coded by{" "}
-            <a
-              href="https://www.creative-tim.com?ref=nukr-default-footer"
-              target="_blank"
-            >
-              Creative Tim
+              Shreyas Shivakumar Kasetty
             </a>
             .
           </div>
