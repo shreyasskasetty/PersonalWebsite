@@ -115,8 +115,13 @@ function ExamplesNavbar() {
                   </NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink href="#mymedia">
-                    Media
+                  <NavLink href="#homework1">
+                    HW1
+                  </NavLink>
+              </NavItem>
+              <NavItem>
+                  <NavLink href="#homework2">
+                    HW2
                   </NavLink>
               </NavItem>
             </Nav>

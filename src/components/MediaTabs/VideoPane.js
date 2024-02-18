@@ -32,35 +32,38 @@ const VideoPane = ({ category, items }) => {
   const gridColumnSize = 12 / getVisibleItemCount();
 
   return (
-    <Container>
-      <Typography variant="h5" gutterBottom>
-        {category}
-      </Typography>
-      <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-        <IconButton onClick={handlePrev} sx={{ position: 'absolute', left: '-40px' }}>
-          <ArrowBackIosIcon />
-        </IconButton>
-        <Box sx={{ overflow: 'hidden', flexGrow: 1 }}>
-          <Grid container style={{ width: '100%', minHeight: '350px' }}  spacing={2}>
-            {visibleItems.map((item, index) => (
-              <Grid item key={index} xs={gridColumnSize} sm={gridColumnSize} md={gridColumnSize}>
-                <Paper style={{margin:'2px', minHeight: '300px' }} elevation={3}>
-                  <img src={item.imageUrl} alt={item.name} style={{ width: '100%', height: 'auto' }} />
-                  <Box padding={2}>
-                    <Typography variant="subtitle1" style={{ fontFamily: '"Roboto", sans-serif', textTransform: 'none' }}>
-                      {item.name}
-                    </Typography>
-                  </Box>
-                </Paper>
-              </Grid>
-            ))}
+   <Container maxWidth="lg"> {/* Change maxWidth to 'lg', 'xl', or false for a wider pane */}
+  <Typography variant="h5" gutterBottom>
+    {category}
+  </Typography>
+  <Box sx={{ position: 'relative', minWidth:'500px', display: 'flex', alignItems: 'center' }}>
+    <IconButton onClick={handlePrev} sx={{ position: 'absolute', left: '-40px' }}>
+      <ArrowBackIosIcon />
+    </IconButton>
+    <Box sx={{ overflow: 'hidden', flexGrow: 1 }}>
+      <Grid container spacing={2} style={{ width: '100%', minHeight: '350px' }}>
+        {visibleItems.map((item, index) => (
+          <Grid item key={index} xs={gridColumnSize} sm={gridColumnSize} md={gridColumnSize}>
+            <Paper elevation={3} style={{ margin: '2px', minWidth: '140px', /* Increased minWidth for thicker cards */ minHeight: '300px' }}>
+              <img src={item.imageUrl} alt={item.name} style={{ width: '100%', height: 'auto' }} />
+              <Box padding={2}>
+                <Typography variant="subtitle1" style={{ fontFamily: '"Roboto", sans-serif', textTransform: 'none' }}>
+                  {item.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" style={{ marginTop: '8px' }}>
+                  Genre: {item.genre}
+                </Typography>
+              </Box>
+            </Paper>
           </Grid>
-        </Box>
-        <IconButton onClick={handleNext} sx={{ position: 'absolute', right: '-40px' }}>
-          <ArrowForwardIosIcon />
-        </IconButton>
-      </Box>
-    </Container>
+        ))}
+      </Grid>
+    </Box>
+    <IconButton onClick={handleNext} sx={{ position: 'absolute', right: '-40px' }}>
+      <ArrowForwardIosIcon />
+    </IconButton>
+  </Box>
+</Container>
   );
 };
 

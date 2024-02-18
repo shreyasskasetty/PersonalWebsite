@@ -71,7 +71,6 @@ const SportsPane = () => {
                     </Grid>
                 ))}
             </Grid>
-            <p>These computer games and sports are not only entertaining but also engaging, providing hours of fun and excitement.</p>
         </div>
     );
 };

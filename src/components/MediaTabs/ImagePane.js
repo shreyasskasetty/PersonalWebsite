@@ -19,10 +19,10 @@ export default function ImagePane() {
     <Box sx={{ width: 500, minHeight: 829 }}>
      <Box textAlign="center" my={4}>
         <Typography variant="h4" component="h2" gutterBottom>
-          My Photography and Art Work
+          Art Gallery
         </Typography>
         <Typography  variant="subtitle1" style={{ fontFamily: '"Roboto", sans-serif', textTransform: 'none' }}>
-         Enclosed are photographs, each a unique capture through the lens of my own camera
+          A collection of my photography and sketches
         </Typography>
       </Box>
       <Masonry columns={3} spacing={2}>
